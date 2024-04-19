@@ -1,0 +1,9 @@
+data/*
+weights
+
+outputs
+
+__pycache__
+*.pyc
+*.pt
+*.out
