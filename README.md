@@ -56,12 +56,12 @@ python utils/detector_data.py
 
 Generate a randomly cropped dataset with 20 classes only:
 ```bash
-python utils/detector_data.py --classes 20 --save_dir MUSCIMA++/datasets_r_staff_20_crop --save_config data_staff_removed_20_crop.yaml 
+python utils/detector_data.py --classes 20 --save_dir data/MUSCIMA++/datasets_r_staff_20_crop --save_config data_staff_removed_20_crop.yaml 
 ```
 
 Generate a randomly cropped dataset with all classes:
 ```bash
-python utils/detector_data.py --classes all --save_dir MUSCIMA++/datasets_r_staff_all_crop --save_config data_staff_removed_all_crop.yaml
+python utils/detector_data.py --classes all --save_dir data/MUSCIMA++/datasets_r_staff_all_crop --save_config data_staff_removed_all_crop.yaml
 ```
 
 ### Training

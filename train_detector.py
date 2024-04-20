@@ -29,8 +29,7 @@ if __name__ == "__main__":
         nt_per_class = validator.nt_per_class
 
     model.callbacks["on_val_end"].append(save_nt_per_class)      
-    metrics = model.val(project=args.output_dir) # evaluate model performance on the validation set
-    print(metrics.box.map50)
+    metrics = model.val(project=args.output_dir, name="valid") # evaluate model performance on the validation set
 
     df = pd.DataFrame.from_dict(
         {
