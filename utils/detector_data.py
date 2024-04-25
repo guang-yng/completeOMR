@@ -76,9 +76,9 @@ if __name__ == "__main__":
     parser.add_argument('-i', '--image_dir', default="data/MUSCIMA++/datasets_r_staff/images", help='data directory of staff removed images')
     parser.add_argument('-c', '--classes', default='essential',
                         help="The classes used for training. Possible values are ['essn', 'essential', '20', 'all']. Default to 'essential'.")
-    parser.add_argument('--seed', default=314, help="The random seed.")
+    parser.add_argument('--seed', type=int, default=314, help="The random seed.")
     parser.add_argument('--save_dir', default='data/MUSCIMA++/datasets_r_staff_essn_crop', help='The output directory.')
-    parser.add_argument('--save_config', default='data_staff_removed_crop.yaml', help='The path to save yaml file')
+    parser.add_argument('--save_config', default='data_staff_removed_essn_crop.yaml', help='The path to save yaml file')
     parser.add_argument('--split_file', default='splits/mob_split.yaml', help='The split yaml file.')
     parser.add_argument('--crop_times', default=14, type=int, help='number of crops for each image. Default to 14.')
                         
