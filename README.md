@@ -73,42 +73,17 @@ Here is an example:
 python train_detector.py --config data/MUSCIMA++/datasets_r_staff_essn_crop/data_staff_removed_crop.yaml
 ```
 
-<!---
 ### Inference
 
-To obtain the predictions on test dataset, run the following script:
-```
-usage: infer.py [-h] [--model MODEL] [--data DATA] [--images IMAGES] [--classes CLASSES] [--visualize] [--grids] [--links]
-                [--batch_size BATCH_SIZE] [--save_dir SAVE_DIR]
+After training a model, to detect all objects in the whole dataset,
+run the following script:
 
-options:
-  -h, --help            show this help message and exit
-  --model MODEL         The model to load.
-  --data DATA           The dataset path. Used to link to original images and read ground truths.
-  --images IMAGES       The path to images to be predicted.
-  --classes CLASSES     The classes used for inference. Possible values are ['essential', '20', 'all']. Default to 'essential'.
-  --visualize           Whether visualize the result. (draw bounding boxes)
-  --grids               Whether to visualize the girds. Only valid when --visualize is set.
-  --links               Whether to generate psuedo edges in annotations.
-  --batch_size BATCH_SIZE
-                        The batch size for inference.
-  --save_dir SAVE_DIR   The directory to save results
-```
-
-For example, to run inference on essential classes and visualize the result:
 ```bash
-python infer.py --visualize --links
-```
-
-To show segmetation grids in the visualization, add `--grids` option.
-
-We also provide the generated detection output in `./data/v2.0_gen_essn.zip`.
-Run the following command to extract them:
-```bash
-unzip -d data/MUSCIMA++/ data/v2.0_gen_essn.zip
+python detector_infer.py --model outputs/detection_v8l_b8_i640/train/weights/best.pt --save_dir data/MUSCIMA++/v2.0_gen --visualize --grids --links
 ```
 
 
+<!--
 ## Notation Assembly
 
 After training the object detector and generating all of the bounding boxes,
