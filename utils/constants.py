@@ -42,14 +42,14 @@ CLASS_LIST_20 = [
 
 # Essential classes
 CLASS_LIST_ESSN = [
-    'noteheadFull' 
-    'stem' 
-    'beam' 
-    'augmentationDot' 
-    'accidentalSharp' 
-    'accidentalFlat' 
-    'accidentalNatural' 
-    'accidentalDoubleSharp' 
+    'noteheadFull', 
+    'stem',
+    'beam',
+    'augmentationDot',
+    'accidentalSharp', 
+    'accidentalFlat', 
+    'accidentalNatural', 
+    'accidentalDoubleSharp',
     'accidentalDoubleFlat',
 	'restWhole',
 	'restHalf',
