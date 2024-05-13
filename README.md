@@ -82,35 +82,25 @@ run the following script:
 python detector_infer.py --model outputs/detection_v8l_b8_i640/train/weights/best.pt --save_dir data/MUSCIMA++/v2.0_gen --visualize --grids --links
 ```
 
-
-<!--
 ## Notation Assembly
 
+### Training
+
 After training the object detector and generating all of the bounding boxes,
-we can simply train our notation assembly model using following commands (All of the experiments will run with 3 different seeds):
+we can simply train our notation assembly model with the script `train_assembler.py`.
 
-For baseline MLP, 
+Here is an example:
 ```bash
-bash run_vanilla.sh
+python train_assembler.py -m data/MUSCIMA++/v2.0_gen/data \
+        --model_config configs/assembler/on_gen/MLP32_v2gen.yaml \
+        --exp_name assembly_on_gen
 ```
 
-For baseline MLP + pipeline training,
-```bash
-bash run_v2gen_v0.sh
-```
-
-For baseline MLP + pipeline training + soft label,
-```bash
-bash run_v2gen_v0_soft.sh
-```
-
-All of the training are done with essential classes,
-please check these scripts for possible options.
+### Test
 
 To test a trained model on the test set, run following command:
+```bash
+python train_assembler.py -m data/MUSCIMA++/v2.0_gen/data \
+        --model_config configs/assembler/on_gen/MLP32_v2gen.yaml \
+        --exp_name assembly_on_gen  --test_only --load_epochs 180 
 ```
-python -m effnet.train -m data/MUSCIMA++/v2.0_gen_essn/data \
-        --model_config configs/effnet/MLP32_nogrammar.yaml \
-        --exp_name vanilla_reproduce_$seed --test_only --edgelist_inf --load_epochs $best_model_epoch
-```
---->

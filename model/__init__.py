@@ -1,1 +1,1 @@
-from .model import YOLOSoft
+from .model import YOLOSoft, MLP, MLPwithSoftClass, MLPwithSoftClassExtraMLP
