@@ -157,7 +157,7 @@ def main(args, data, cfg, device, class_list, class_dict):
                 model_files = sorted(model_files, key=lambda x: int(x.split("_")[-1].split(".")[0][2:]), reverse=True)
                 all_ckpts = [f"{args.output_dir}/{args.exp_name}/{model_files[0]}"]
         elif args.load_epochs == -2: # test/val all checkpoints
-            all_ckpts = [f"{args.output_dir}/{args.exp_name}/model_ep{e}.pth" for e in range(80, 200, 20)] + [f"{args.output_dir}/{args.exp_name}/model_final.pth"]
+            all_ckpts = [f"{args.output_dir}/{args.exp_name}/model_ep{e}.pth" for e in range(cfg.TRAIN.SAVE_FREQUENCY, cfg.TRAIN.NUM_EPOCHS, cfg.TRAIN.SAVE_FREQUENCY)] + [f"{args.output_dir}/{args.exp_name}/model_final.pth"]
         else: # test/val specified checkpoints
             all_ckpts = [f"{args.output_dir}/{args.exp_name}/model_ep{args.load_epochs}.pth"]
 
